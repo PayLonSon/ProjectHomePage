@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PayLonSon 作品集</title>
+<meta name="description" content="PayLonSon 的網頁作品集：遊戲與實用小工具，免安裝、手機可用。">
+<meta property="og:title" content="PayLonSon 作品集">
+<meta property="og:description" content="遊戲與實用小工具，打開瀏覽器就能用。">
+<style>
+  :root{
+    --bg:#0d0f14; --panel:#161a22; --line:#262c38;
+    --text:#e8e6e1; --muted:#9097a3; --accent:#e5484d; --accent2:#f5b544;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+       background:var(--bg);color:var(--text);line-height:1.7}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Hero */
+  header{padding:88px 0 56px;border-bottom:1px solid var(--line);
+         background:radial-gradient(ellipse at 20% 0%,#2a1215 0%,transparent 60%)}
+  .tag{display:inline-block;font-size:13px;letter-spacing:.2em;color:var(--accent2);margin-bottom:14px}
+  h1{font-size:clamp(34px,6vw,56px);line-height:1.15;font-weight:800}
+  h1 span{color:var(--accent)}
+  .lead{margin-top:18px;max-width:560px;color:var(--muted);font-size:17px}
+  .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;
+       text-decoration:none;font-weight:700;font-size:15px;border:1px solid var(--line);transition:.2s}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.disabled{opacity:.5;pointer-events:none}
+
+  /* Sections */
+  section{padding:64px 0}
+  h2{font-size:26px;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:32px}
+
+  /* Game cards */
+  .games{display:grid;gap:24px}
+  .card{display:grid;grid-template-columns:300px 1fr;background:var(--panel);
+        border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .cover{position:relative;min-height:220px;display:flex;align-items:center;justify-content:center;
+         font-size:64px;font-weight:900;letter-spacing:.05em;color:#fff}
+  .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cover img.icon{position:static;width:120px;height:120px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .status{position:absolute;top:12px;left:12px;font-size:12px;font-weight:700;padding:4px 10px;
+          border-radius:999px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+  .status.live{color:#5be49b}.status.dev{color:var(--accent2)}
+  .body{padding:26px 28px}
+  .body h3{font-size:24px}
+  .tagline{color:var(--accent2);font-size:14px;margin:2px 0 12px}
+  .body p{color:#c9ccd2}
+  .feats{list-style:none;margin:16px 0;display:flex;flex-wrap:wrap;gap:8px}
+  .feats li{font-size:13px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+  .body .cta{margin-top:18px}
+
+  /* About */
+  .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .about div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .about b{display:block;font-size:17px;margin-bottom:6px}
+  .about p{color:var(--muted);font-size:15px}
+
+  /* Tabs & categories */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;position:sticky;top:0;z-index:5;
+        padding:12px 0;background:var(--bg)}
+  .tab{font:inherit;font-size:15px;font-weight:700;color:var(--muted);background:var(--panel);
+       border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;transition:.2s}
+  .tab .n{font-size:12px;opacity:.7;margin-left:4px}
+  .tab.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+  .cat{margin-bottom:44px}
+  .cat h3.cat-title{font-size:20px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .cat .cat-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .games{display:grid;gap:24px}
+  .card.small{grid-template-columns:200px 1fr}
+  .card.small .cover{min-height:170px;font-size:48px}
+  .empty{color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:28px;text-align:center}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media (max-width:720px){
+    .card{grid-template-columns:1fr}
+    .cover{min-height:180px}
+    .card.small{grid-template-columns:1fr}
+    header{padding:64px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="tag">PORTFOLIO</div>
+    <h1>打開瀏覽器，<br><span>馬上就能用。</span></h1>
+    <p class="lead">這裡收錄我做的網頁遊戲和實用小工具。全部免安裝，手機也能用，點進去就開始。</p>
+    <div class="cta">
+      <a class="btn primary" href="#works">看看作品 ↓</a>
+      <a class="btn" href="https://github.com/PayLonSon" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="works">
+  <div class="wrap">
+    <h2>作品</h2>
+    <p class="sub">已上線的可以直接點進去用，開發中的歡迎先追蹤。</p>
+    <div class="tabs" id="tabs"></div>
+    <div id="workList"></div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0">
+  <div class="wrap">
+    <h2>製作原則</h2>
+    <p class="sub">每個作品都照這幾個原則做。</p>
+    <div class="about">
+      <div><b>⚡ 免安裝</b><p>全部跑在瀏覽器裡，點連結就能用，不用下載 App。</p></div>
+      <div><b>📱 手機優先</b><p>介面與操作都先為手機設計，電腦也能順暢遊玩。</p></div>
+      <div><b>⏱ 輕量快速</b><p>遊戲一局幾分鐘，工具打開就能用，不用註冊。</p></div>
+      <div><b>🔄 持續更新</b><p>新故事、新內容會陸續加入，每次回來都有新東西。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> PayLonSon</span>
+    <span>有建議或發現 bug？歡迎到 GitHub 開 Issue。</span>
+  </div>
+</footer>
+
+<script>
+/* ===== 分類設定：要加新分類就在這裡加一筆 ===== */
+const categories = [
+  { id: "game", name: "遊戲",   icon: "🎮", sub: "一局幾分鐘的網頁遊戲，手機就能玩。" },
+  { id: "tool", name: "小工具", icon: "🛠", sub: "解決日常小麻煩的實用工具。" }
+];
+
+/* ===== 作品清單：新增作品只要在這裡加一筆 =====
+   category: 對應上面分類的 id
+   status:   live = 已上線, dev = 開發中
+   cover:    截圖路徑（例如 "images/doorvault.png"），留空就顯示色塊加 coverText
+*/
+const works = [
+  {
+    category: "game",
+    title: "三扇門｜惡夢",
+    tagline: "DoorVault・連過三扇門，才能真正醒來",
+    status: "live",
+    cover: "images/doorvault.png",
+    coverText: "門",
+    coverColor: "linear-gradient(135deg,#3a0d12,#120607)",
+    desc: "一款 5 到 10 分鐘玩完的網頁恐怖遊戲。入睡後從床邊三樣道具挑一樣，接著連闖三扇以四字成語命名的門，每扇門都有自己的怪物規則與地圖，像「杯弓蛇影」裡你停下牠才靠近、「守口如瓶」只能靠聲音判斷。三扇門共用五分鐘，天亮前沒走完就失敗；每過一扇門可以三選一成長。每一晚都是新的一局，不存檔。",
+    features: ["恐怖", "5–10 分鐘", "10 個成語故事", "6 種道具", "7 種成長", "手機／電腦"],
+    link: "https://paylonson.github.io/DoorVault/",
+    repo: "https://github.com/PayLonSon/DoorVault"
+  },
+  {
+    category: "game",
+    title: "大富翁",
+    tagline: "面對面用手機連線的台灣版大富翁",
+    status: "live",
+    cover: "",
+    coverText: "🎲",
+    coverColor: "linear-gradient(135deg,#1d2b4a,#0b1020)",
+    desc: "房主建立房間拿到 4 位數房號，朋友輸入房號就能加入，支援 2–6 人。房主的手機就是遊戲主機，負責所有規則判定，連上後資料在手機之間直接傳送。斷線的玩家重新打開網頁、輸入同一個房號就能回到遊戲。沒有多支手機也能用單機模式輪流傳著玩，會自動存檔。",
+    features: ["多人 2–6 人", "房號連線", "單機輪流玩", "自動存檔", "聚會"],
+    link: "https://paylonson.github.io/Monopoly/",
+    repo: "https://github.com/PayLonSon/Monopoly"
+  },
+  {
+    category: "tool",
+    title: "分帳房 SplitRoom",
+    tagline: "出去玩、聚餐的分帳，算清楚誰該給誰多少",
+    status: "live",
+    cover: "",
+    coverText: "💰",
+    coverColor: "linear-gradient(135deg,#123a2a,#07140f)",
+    desc: "每筆記下金額、誰先付、分給哪些人，自動算出每個人的差額，以及用最少轉帳筆數完成的「誰要給誰多少錢」。用 6 碼房號或邀請連結開房間，大家的手機可以同步記帳；房主離線會自動換人，離線時記的帳連上後也會自動合併。資料只存在你的瀏覽器，可匯出備份。",
+    features: ["多人同步", "最少轉帳結算", "離線可用", "資料存在本機", "匯出／匯入"],
+    link: "https://paylonson.github.io/SplitRoom/",
+    repo: "https://github.com/PayLonSon/SplitRoom"
+  }
+  /* 範例：新增作品
+  ,{
+    category: "tool",            // game 或 tool
+    title: "作品名稱",
+    tagline: "一句話說明",
+    status: "live",              // live = 已上線, dev = 開發中
+    cover: "",                   // 截圖路徑，例如 "images/xxx.png"
+    coverText: "工",
+    coverColor: "linear-gradient(135deg,#3a2f12,#141007)",
+    desc: "這個作品能做什麼。",
+    features: ["標籤1", "標籤2"],
+    link: "https://paylonson.github.io/你的repo/",
+    repo: "https://github.com/PayLonSon/你的repo"
+  }
+  */
+];
+
+const statusText = { live: "● 已上線", dev: "◐ 開發中" };
+const actionText = { game: "▶ 立即遊玩", tool: "↗ 開啟工具" };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const card = w => `
+  <article class="card ${w.category === "tool" ? "small" : ""}">
+    <div class="cover" style="background:${w.coverColor}">
+      ${w.cover ? `<img class="${w.coverFit==='cover'?'':'icon'}" src="${esc(w.cover)}" alt="${esc(w.title)} 截圖" loading="lazy">` : esc(w.coverText)}
+      <span class="status ${w.status}">${statusText[w.status]}</span>
+    </div>
+    <div class="body">
+      <h3>${esc(w.title)}</h3>
+      <div class="tagline">${esc(w.tagline)}</div>
+      <p>${esc(w.desc)}</p>
+      <ul class="feats">${w.features.map(f => `<li>${esc(f)}</li>`).join("")}</ul>
+      <div class="cta">
+        ${w.link
+          ? `<a class="btn primary" href="${esc(w.link)}" target="_blank" rel="noopener">${actionText[w.category] || "↗ 開啟"}</a>`
+          : `<span class="btn disabled">即將推出</span>`}
+        ${w.repo ? `<a class="btn" href="${esc(w.repo)}" target="_blank" rel="noopener">原始碼</a>` : ""}
+      </div>
+    </div>
+  </article>`;
+
+function render(active) {
+  const tabs = [{ id: "all", name: "全部", icon: "✨" }, ...categories];
+  document.getElementById("tabs").innerHTML = tabs.map(t => {
+    const n = t.id === "all" ? works.length : works.filter(w => w.category === t.id).length;
+    return `<button class="tab ${t.id === active ? "on" : ""}" data-id="${t.id}">${t.icon} ${t.name}<span class="n">${n}</span></button>`;
+  }).join("");
+
+  const shown = active === "all" ? categories : categories.filter(c => c.id === active);
+  document.getElementById("workList").innerHTML = shown.map(c => {
+    const list = works.filter(w => w.category === c.id)
+      .sort((a, b) => (a.status === "live" ? 0 : 1) - (b.status === "live" ? 0 : 1)); // 已上線排前面
+    return `<div class="cat">
+      <h3 class="cat-title">${c.icon} ${c.name}</h3>
+      <p class="cat-sub">${c.sub}</p>
+      <div class="games">${list.length ? list.map(card).join("") : `<div class="empty">還沒有作品，敬請期待。</div>`}</div>
+    </div>`;
+  }).join("");
+
+  history.replaceState(null, "", active === "all" ? location.pathname : "#" + active);
+}
+
+document.getElementById("tabs").addEventListener("click", e => {
+  const b = e.target.closest(".tab"); if (b) render(b.dataset.id);
+});
+
+// 支援用網址直接打開某分類，例如 .../#tool
+const fromHash = location.hash.slice(1);
+render(categories.some(c => c.id === fromHash) ? fromHash : "all");
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
