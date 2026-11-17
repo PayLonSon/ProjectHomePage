@@ -7,192 +7,298 @@
 <meta name="description" content="PayLonSon 的網頁作品集：遊戲與實用小工具，免安裝、手機可用。">
 <meta property="og:title" content="PayLonSon 作品集">
 <meta property="og:description" content="遊戲與實用小工具，打開瀏覽器就能用。">
-<meta name="theme-color" content="#f6f3ec">
+<meta name="theme-color" content="#fff6e3">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <style>
   :root{
-    --paper:#f6f3ec; --ink:#111; --white:#fff; --muted:#5d5a55;
-    --daisy:#ffd400; --line:2.5px solid var(--ink);
-    --serif:"Times New Roman","Songti TC","Noto Serif TC",serif;
-    --sans:"Helvetica Neue","Arial Black","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    --cream:#fff6e3; --ink:#2a211c; --white:#fff; --muted:#6e625a;
+    --yellow:#ffd23f; --pink:#ff9ec7; --mint:#7fdbb6; --sky:#8fc8ff; --lilac:#b9a3ff; --peach:#ffb38a;
+    --bd:3.5px solid var(--ink);
+    --round:"Arial Rounded MT Bold","Yuanti TC","jf-openhuninn-2.0","GenSenRounded TW","M PLUS Rounded 1c","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;
-       background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1px);background-size:18px 18px}
+  body{font-family:var(--round);background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden;
+       background-image:radial-gradient(rgba(42,33,28,.07) 2px,transparent 2px);background-size:26px 26px}
   a{color:inherit}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px;position:relative}
-  svg.d{display:block}
-
-  /* 雛菊 */
-  .spin{animation:spin 24s linear infinite;transform-origin:center}
-  .spin.rev{animation-direction:reverse;animation-duration:32s}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .wobble{animation:wob 3.5s ease-in-out infinite}
-  @keyframes wob{50%{transform:rotate(-8deg) scale(1.05)}}
+  svg.i{display:block}
 
   /* Hero */
-  header{position:relative;padding:70px 0 90px;overflow:hidden}
-  .hero-daisy{position:absolute;pointer-events:none}
-  .hero-daisy.a{width:340px;right:-60px;top:20px}
-  .hero-daisy.b{width:120px;right:300px;top:280px}
-  .hero-daisy.c{width:70px;left:46%;top:40px}
-  .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:900;letter-spacing:.3em;
-       background:var(--ink);color:var(--paper);padding:6px 14px;transform:rotate(-2deg)}
-  h1{margin-top:26px;font-size:clamp(46px,9vw,108px);line-height:1;font-weight:900;letter-spacing:-.03em;position:relative;z-index:1}
-  h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
-  h1 .mark{background:linear-gradient(transparent 58%,var(--daisy) 58%,var(--daisy) 92%,transparent 92%);padding:0 .08em}
-  .lead{margin-top:26px;max-width:520px;font-size:17px;position:relative;z-index:1}
-  .sign{font-family:var(--serif);font-style:italic;font-size:22px;margin-top:6px;display:block}
-  .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:var(--line);border-radius:999px;
-       background:var(--white);text-decoration:none;font-weight:900;font-size:15px;box-shadow:4px 4px 0 var(--ink);transition:.15s}
-  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-  .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-  .btn.primary{background:var(--ink);color:var(--white)}
-  .btn.primary:hover{background:var(--daisy);color:var(--ink)}
-  .btn.disabled{opacity:.45;pointer-events:none;box-shadow:none;border-style:dashed}
+  header{position:relative;padding:64px 0 84px;overflow:hidden}
+  .deco{position:absolute;pointer-events:none}
+  .deco.a{width:300px;right:-40px;top:30px;transform:rotate(12deg)}
+  .deco.b{width:110px;right:290px;top:250px;transform:rotate(-18deg)}
+  .deco.c{width:64px;left:48%;top:46px}
+  .cloud{position:absolute;right:250px;top:60px;width:150px}
+  .tag{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:900;letter-spacing:.12em;
+       background:var(--white);border:var(--bd);border-radius:999px;padding:6px 18px 6px 8px;box-shadow:4px 4px 0 var(--ink)}
+  .tag svg{width:30px;height:30px}
+  h1{margin-top:28px;font-size:clamp(44px,8.5vw,98px);line-height:1.08;font-weight:900;letter-spacing:-.01em;position:relative;z-index:1;
+     -webkit-text-stroke:0;text-shadow:4px 4px 0 var(--white),5px 5px 0 var(--ink)}
+  h1 .pop{display:inline-block;background:var(--yellow);border:var(--bd);border-radius:22px;padding:0 .18em;margin-right:.08em;
+          transform:rotate(-3deg);text-shadow:none;box-shadow:6px 6px 0 var(--ink)}
+  .bubble{position:relative;display:inline-block;margin-top:30px;max-width:540px;background:var(--white);border:var(--bd);
+          border-radius:26px;padding:16px 22px;font-size:17px;box-shadow:5px 5px 0 var(--ink);z-index:1}
+  .bubble::after{content:"";position:absolute;left:40px;bottom:-19px;width:28px;height:28px;background:var(--white);
+                 border-right:var(--bd);border-bottom:var(--bd);transform:rotate(45deg)}
+  .bubble b{color:#d9486f}
+  .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:var(--bd);border-radius:999px;background:var(--white);
+       text-decoration:none;font-weight:900;font-size:16px;box-shadow:4px 4px 0 var(--ink)}
+  .btn svg{width:22px;height:22px}
+  .btn:hover{background:var(--yellow)}
+  .btn.primary{background:var(--pink)}
+  .btn.primary:hover{background:var(--yellow)}
+  .btn.disabled{background:#eee6d8;color:var(--muted);box-shadow:none;border-style:dashed;pointer-events:none}
 
-  /* 跑馬燈 */
-  .marquee{border-top:var(--line);border-bottom:var(--line);background:var(--ink);color:var(--paper);
-           overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:0 -20px;position:relative;z-index:2}
-  .marquee .track{display:inline-flex;gap:28px;padding:12px 0;animation:mq 26s linear infinite;font-weight:900;
-                  font-size:20px;letter-spacing:.08em}
-  .marquee .track span{display:inline-flex;align-items:center;gap:28px}
-  .marquee svg{width:26px;height:26px}
-  @keyframes mq{to{transform:translateX(-50%)}}
+  /* 作品名稱彩帶（靜態） */
+  .ribbon{background:var(--ink);color:var(--cream);border-top:var(--bd);border-bottom:var(--bd);transform:rotate(-1.5deg);
+          margin:0 -30px;overflow:hidden;white-space:nowrap;position:relative;z-index:2}
+  .ribbon .track{display:flex;justify-content:center;gap:22px;padding:12px 0;font-weight:900;font-size:19px;letter-spacing:.06em}
+  .ribbon span{display:inline-flex;align-items:center;gap:22px}
+  .ribbon svg{width:26px;height:26px}
 
-  /* 區塊 */
   section{padding:80px 0}
-  .h2{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px}
-  h2{font-size:clamp(34px,6vw,56px);font-weight:900;line-height:1;letter-spacing:-.02em}
-  h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
-  .h2 svg{width:52px;margin-bottom:2px}
-  .sub{color:var(--muted);margin-bottom:28px}
+  .h2{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  h2{font-size:clamp(32px,5.5vw,50px);font-weight:900;line-height:1.1}
+  .h2 svg{width:54px;height:54px}
+  .sub{color:var(--muted);margin-bottom:26px}
 
   /* 頁籤 */
-  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px;position:sticky;top:0;z-index:5;padding:14px 0;
-        background:var(--paper)}
-  .tab{font:inherit;font-size:15px;font-weight:900;color:var(--ink);background:var(--white);border:var(--line);
-       border-radius:999px;padding:8px 18px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
-  .tab .n{font-size:12px;background:var(--ink);color:var(--white);border-radius:999px;padding:0 7px;line-height:18px}
-  .tab:hover{transform:rotate(-2deg)}
-  .tab.on{background:var(--ink);color:var(--white);box-shadow:4px 4px 0 var(--daisy)}
-  .tab.on .n{background:var(--daisy);color:var(--ink)}
+  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px;position:sticky;top:0;z-index:5;padding:14px 0;background:var(--cream)}
+  .tab{font:inherit;font-size:16px;font-weight:900;color:var(--ink);background:var(--white);border:var(--bd);border-radius:999px;
+       padding:6px 16px 6px 8px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .tab svg{width:30px;height:30px}
+  .tab .n{font-size:13px;background:var(--ink);color:var(--white);border-radius:999px;padding:0 8px;line-height:20px}
+  .tab:hover{background:#fff1c4}
+  .tab.on{background:var(--yellow);box-shadow:4px 4px 0 var(--ink)}
 
   /* 分類與卡片 */
-  .cat{margin-bottom:56px}
+  .cat{margin-bottom:58px}
   .cat-title{font-size:26px;font-weight:900;display:flex;align-items:center;gap:10px}
-  .cat-title::after{content:"";flex:1;border-bottom:var(--line);margin-left:6px}
-  .cat-sub{color:var(--muted);font-size:14px;margin:2px 0 22px}
-  .games{display:grid;gap:30px}
-  .card{position:relative;display:grid;grid-template-columns:300px 1fr;background:var(--white);border:var(--line);
-        border-radius:22px;box-shadow:8px 8px 0 var(--ink);transition:.2s}
-  .card:nth-child(even){transform:rotate(.6deg)}
-  .card:nth-child(odd){transform:rotate(-.4deg)}
-  .card:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
-  .cover{position:relative;min-height:230px;display:flex;align-items:center;justify-content:center;
-         font-size:64px;font-weight:900;color:#fff;border-right:var(--line);border-radius:20px 0 0 20px;overflow:hidden}
-  .cover::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1.5px,transparent 1.5px);background-size:14px 14px}
-  .cover > *{position:relative}
-  .cover img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-  .cover img.icon{position:relative;width:120px;height:120px;border-radius:26px;border:var(--line);border-color:#fff}
-  .status{position:absolute !important;top:14px;left:14px;font-size:12px;font-weight:900;padding:3px 12px;
-          border:2px solid var(--ink);border-radius:999px;transform:rotate(-6deg)}
-  .status.live{background:var(--daisy);color:var(--ink)}
-  .status.dev{background:var(--white);color:var(--ink);border-style:dashed}
-  .sticker{position:absolute;top:-22px;right:-18px;width:62px;z-index:2;filter:drop-shadow(2px 2px 0 var(--ink))}
+  .cat-title svg{width:44px;height:44px}
+  .cat-title::after{content:"";flex:1;height:0;border-bottom:3.5px dashed var(--ink);margin-left:8px}
+  .cat-sub{color:var(--muted);font-size:15px;margin:2px 0 22px 54px}
+  .games{display:grid;gap:32px}
+  .card{position:relative;display:grid;grid-template-columns:290px 1fr;background:var(--white);border:var(--bd);border-radius:30px;
+        box-shadow:8px 8px 0 var(--ink)}
+  .cover{position:relative;min-height:240px;display:flex;align-items:center;justify-content:center;border-right:var(--bd);
+         border-radius:26px 0 0 26px;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.55) 3px,transparent 3px);background-size:22px 22px}
+  .cover .art{position:relative;width:170px;height:170px;filter:drop-shadow(5px 6px 0 rgba(42,33,28,.25))}
+  .status{position:absolute;top:14px;left:14px;font-size:13px;font-weight:900;padding:2px 12px;border:3px solid var(--ink);
+          border-radius:999px;background:var(--white);display:inline-flex;align-items:center;gap:5px}
+  .status i{width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+  .status.live i{background:#4fd18b}
+  .status.dev i{background:var(--yellow)}
+  .sticker{position:absolute;top:-24px;right:-16px;width:64px;height:64px;z-index:2;transform:rotate(14deg)}
   .body{padding:26px 30px}
-  .body h3{font-size:28px;font-weight:900;line-height:1.2;letter-spacing:-.01em}
-  .tagline{font-family:var(--serif);font-style:italic;font-size:17px;margin:4px 0 12px}
-  .tagline span{background:linear-gradient(transparent 60%,var(--daisy) 60%)}
-  .body p{color:#2a2825}
+  .body h3{font-size:28px;font-weight:900;line-height:1.25}
+  .tagline{display:inline-block;font-size:15px;font-weight:700;margin:6px 0 12px;background:#fff1c4;border:2.5px solid var(--ink);
+           border-radius:12px;padding:1px 10px}
+  .body p{color:#3d332c}
   .feats{list-style:none;margin:16px 0 4px;display:flex;flex-wrap:wrap;gap:8px}
-  .feats li{font-size:13px;font-weight:700;padding:2px 12px;border:2px solid var(--ink);border-radius:999px}
-  .feats li::before{content:"✿ ";color:#d4a900}
+  .feats li{font-size:13px;font-weight:900;padding:2px 12px;border:2.5px solid var(--ink);border-radius:999px;background:var(--cream)}
   .body .cta{margin-top:18px}
-  .card.small{grid-template-columns:210px 1fr}
-  .card.small .cover{min-height:180px;font-size:52px}
-  .empty{border:2.5px dashed var(--ink);border-radius:20px;padding:30px;text-align:center;font-weight:700}
+  .card.small{grid-template-columns:220px 1fr}
+  .card.small .cover{min-height:190px}
+  .card.small .cover .art{width:140px;height:140px}
+  .empty{border:3.5px dashed var(--ink);border-radius:24px;padding:30px;text-align:center;font-weight:900;background:var(--white)}
 
   /* 原則 */
   .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-  .about div{background:var(--white);border:var(--line);border-radius:20px;padding:22px;box-shadow:5px 5px 0 var(--ink)}
-  .about div:nth-child(1){transform:rotate(-1.5deg)}
-  .about div:nth-child(2){transform:rotate(1deg);background:var(--daisy)}
-  .about div:nth-child(3){transform:rotate(-.6deg)}
-  .about div:nth-child(4){transform:rotate(1.4deg);background:var(--ink);color:var(--white)}
-  .about div:nth-child(4) p{color:#cfcac0}
-  .about b{display:block;font-size:19px;font-weight:900;margin-bottom:6px}
-  .about p{color:var(--muted);font-size:15px}
+  .about div{border:var(--bd);border-radius:26px;padding:22px;box-shadow:5px 5px 0 var(--ink)}
+  .about div:nth-child(1){background:var(--yellow)}
+  .about div:nth-child(2){background:var(--sky)}
+  .about div:nth-child(3){background:var(--pink)}
+  .about div:nth-child(4){background:var(--mint)}
+  .about svg{width:56px;height:56px;margin-bottom:8px}
+  .about b{display:block;font-size:20px;font-weight:900;margin-bottom:4px}
+  .about p{font-size:15px;color:#3d332c}
 
-  footer{background:var(--ink);color:var(--paper);padding:46px 0 36px;margin-top:40px;position:relative;overflow:hidden}
+  footer{background:var(--ink);color:var(--cream);padding:44px 0 36px;margin-top:40px;position:relative;overflow:hidden;border-top:var(--bd)}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:14px}
-  footer .big{font-family:var(--serif);font-style:italic;font-size:28px}
-  footer .fd{position:absolute;width:180px;right:-40px;bottom:-60px;opacity:.9}
+  footer .big{display:inline-flex;align-items:center;gap:10px;font-size:22px;font-weight:900}
+  footer .big svg{width:40px;height:40px}
 
   @media (max-width:720px){
-    header{padding:50px 0 70px}
-    .hero-daisy.a{width:200px;right:-70px;top:auto;bottom:10px}
-    .hero-daisy.b{display:none}
-    .hero-daisy.c{left:auto;right:30px;top:24px;width:50px}
+    header{padding:46px 0 70px}
+    .deco.a{width:170px;right:-50px;top:auto;bottom:20px}
+    .deco.b,svg.cloud{display:none}
+    .deco.c{left:auto;right:24px;top:26px;width:46px}
     .card,.card.small{grid-template-columns:1fr}
-    .cover{min-height:180px;border-right:0;border-bottom:var(--line);border-radius:20px 20px 0 0}
-    .sticker{width:50px;right:-8px}
+    .cover{min-height:200px;border-right:0;border-bottom:var(--bd);border-radius:26px 26px 0 0}
+    .sticker{width:52px;height:52px;right:-6px}
     .body{padding:22px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .spin,.wobble,.marquee .track{animation:none}
+    .cat-sub{margin-left:0}
+    .ribbon .track{justify-content:flex-start}
   }
 </style>
 </head>
 <body>
 
-<!-- 原創雛菊圖形：白色花瓣 + 黃色花心，所有雛菊共用 -->
+<!-- ===== 原創圖示庫（全部自行繪製，無動畫） ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="daisy" viewBox="-50 -50 100 100">
-      <g fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round">
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(0)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(30)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(60)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(90)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(120)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(150)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(180)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(210)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(240)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(270)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(300)"/>
-        <path d="M0,-9 C-7,-22 -6,-40 0,-46 C6,-40 7,-22 0,-9Z" transform="rotate(330)"/>
+    <!-- 雛菊 -->
+    <symbol id="daisy" viewBox="0 0 100 100">
+      <g fill="#fff" stroke="#2a211c" stroke-width="4" stroke-linejoin="round">
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(36 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(72 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(108 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(144 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(180 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(216 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(252 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(288 50 50)"/>
+        <ellipse cx="50" cy="22" rx="12" ry="21" transform="rotate(324 50 50)"/>
       </g>
-      <circle r="13" fill="#ffd400" stroke="#111" stroke-width="2.4"/>
-      <g fill="#b98f00"><circle cx="6.5" cy="0.0" r="1.3"/><circle cx="3.3" cy="5.6" r="1.3"/><circle cx="-3.2" cy="5.6" r="1.3"/><circle cx="-6.5" cy="0.0" r="1.3"/><circle cx="-3.3" cy="-5.6" r="1.3"/><circle cx="3.3" cy="-5.6" r="1.3"/><circle r="1.3"/></g>
+      <circle cx="50" cy="50" r="16" fill="#ffd23f" stroke="#2a211c" stroke-width="4"/>
+      <ellipse cx="44" cy="44" rx="5" ry="3.5" fill="#fff" opacity=".8" transform="rotate(-30 44 44)"/>
     </symbol>
+
+    <!-- 雲 -->
+    <symbol id="cloud" viewBox="0 0 150 80">
+      <path d="M30 70 C10 70 6 46 24 40 C22 20 48 12 60 26 C68 6 104 8 106 32 C126 28 142 44 132 60 C130 68 124 70 118 70Z"
+            fill="#fff" stroke="#2a211c" stroke-width="4" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- 三扇門：半開的門，門縫裡有一雙眼睛 -->
+    <symbol id="ic-door" viewBox="0 0 120 120">
+      <g stroke="#2a211c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <circle cx="96" cy="22" r="10" fill="#ffe680"/>
+        <circle cx="101" cy="18" r="8" fill="#b9a3ff" stroke="none"/>
+        <rect x="22" y="20" width="62" height="88" rx="10" fill="#3b2a5c"/>
+        <path d="M46 24 L86 16 L86 112 L46 104Z" fill="#fff4d6"/>
+        <path d="M56 40 L76 37 M56 60 L76 58 M56 80 L76 79" fill="none" stroke-width="4"/>
+        <circle cx="54" cy="66" r="4.5" fill="#ffd23f" stroke-width="3.5"/>
+        <path d="M14 108 L106 108" fill="none"/>
+      </g>
+      <ellipse cx="30" cy="54" rx="4.5" ry="6" fill="#ffd23f"/>
+      <ellipse cx="40" cy="54" rx="4.5" ry="6" fill="#ffd23f"/>
+      <circle cx="31" cy="55" r="2" fill="#2a211c"/><circle cx="41" cy="55" r="2" fill="#2a211c"/>
+    </symbol>
+
+    <!-- 大富翁：小房子＋骰子 -->
+    <symbol id="ic-house" viewBox="0 0 120 120">
+      <g stroke="#2a211c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="18" y="56" width="52" height="46" rx="4" fill="#fff4d6"/>
+        <path d="M10 60 L44 26 L78 60Z" fill="#ff7b7b"/>
+        <rect x="56" y="30" width="10" height="18" fill="#ff7b7b"/>
+        <rect x="35" y="74" width="18" height="28" rx="3" fill="#ffd23f"/>
+        <rect x="24" y="64" width="10" height="10" rx="2" fill="#8fc8ff" stroke-width="3.5"/>
+        <path d="M8 102 L112 102" fill="none"/>
+        <g transform="rotate(14 88 74)">
+          <rect x="68" y="54" width="40" height="40" rx="9" fill="#fff"/>
+        </g>
+      </g>
+      <g fill="#2a211c" transform="rotate(14 88 74)">
+        <circle cx="78" cy="64" r="3.6"/><circle cx="88" cy="74" r="3.6"/><circle cx="98" cy="84" r="3.6"/>
+        <circle cx="98" cy="64" r="3.6"/><circle cx="78" cy="84" r="3.6"/>
+      </g>
+    </symbol>
+
+    <!-- 火柴人地城：拿劍和盾的火柴人勇者 -->
+    <symbol id="ic-hero" viewBox="0 0 120 120">
+      <g stroke="#2a211c" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round" fill="none">
+        <path d="M58 46 L58 80 M58 80 L44 106 M58 80 L72 106 M58 56 L36 66 M58 56 L80 46"/>
+        <path d="M80 46 L100 14" stroke-width="5"/>
+      </g>
+      <g stroke="#2a211c" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M84 40 L98 10 L106 14 L92 44Z" fill="#e8eef7"/>
+        <path d="M76 38 L92 48" fill="none" stroke-width="5.5"/>
+        <circle cx="58" cy="30" r="15" fill="#fff"/>
+        <path d="M43 26 C46 12 70 12 73 26Z" fill="#ffd23f"/>
+        <path d="M30 52 C22 54 20 62 22 72 C24 82 32 86 36 88 C40 86 48 82 50 72 C52 62 50 54 42 52Z" fill="#8fc8ff"/>
+        <path d="M36 60 L36 80 M28 68 L44 68" fill="none" stroke-width="3.5"/>
+      </g>
+      <circle cx="53" cy="32" r="2.5" fill="#2a211c"/><circle cx="63" cy="32" r="2.5" fill="#2a211c"/>
+    </symbol>
+
+    <!-- 分帳房：收據對半撕開＋金幣 -->
+    <symbol id="ic-split" viewBox="0 0 120 120">
+      <g stroke="#2a211c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M18 14 L52 14 L52 98 L46 92 L40 98 L34 92 L28 98 L22 92 L18 96Z" fill="#fff" transform="rotate(-8 35 56)"/>
+        <path d="M60 14 L94 14 L94 96 L90 92 L84 98 L78 92 L72 98 L66 92 L60 98Z" fill="#fff" transform="rotate(8 77 56)"/>
+        <g fill="none" stroke-width="4" transform="rotate(-8 35 56)"><path d="M26 30 L44 30 M26 44 L44 44 M26 58 L38 58"/></g>
+        <g fill="none" stroke-width="4" transform="rotate(8 77 56)"><path d="M68 30 L86 30 M68 44 L86 44 M68 58 L80 58"/></g>
+        <circle cx="86" cy="88" r="18" fill="#ffd23f"/>
+        <circle cx="86" cy="88" r="11" fill="none" stroke-width="3"/>
+        <circle cx="58" cy="100" r="13" fill="#ffd23f"/>
+      </g>
+      <text x="86" y="94" text-anchor="middle" font-size="17" font-weight="900" font-family="Arial Rounded MT Bold,Arial,sans-serif" fill="#2a211c">$</text>
+    </symbol>
+
+    <!-- 介面小圖示 -->
+    <symbol id="ic-game" viewBox="0 0 48 48">
+      <g stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M12 14 L36 14 C43 14 46 22 45 30 C44 38 38 40 34 34 L31 30 L17 30 L14 34 C10 40 4 38 3 30 C2 22 5 14 12 14Z" fill="#ff9ec7"/>
+        <path d="M14 19 L14 27 M10 23 L18 23" fill="none" stroke-width="3.2"/>
+        <circle cx="33" cy="21" r="2.6" fill="#ffd23f" stroke-width="2.5"/><circle cx="38" cy="26" r="2.6" fill="#7fdbb6" stroke-width="2.5"/>
+      </g>
+    </symbol>
+    <symbol id="ic-tool" viewBox="0 0 48 48">
+      <g stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M17 16 L17 11 C17 9 18 8 20 8 L28 8 C30 8 31 9 31 11 L31 16" fill="none"/>
+        <rect x="5" y="16" width="38" height="25" rx="6" fill="#7fdbb6"/>
+        <path d="M5 26 L43 26" fill="none"/>
+        <rect x="20" y="22" width="8" height="8" rx="2" fill="#ffd23f" stroke-width="3"/>
+      </g>
+    </symbol>
+    <symbol id="ic-bolt" viewBox="0 0 48 48">
+      <path d="M27 4 L9 27 L22 27 L18 44 L39 19 L26 19Z" fill="#fff" stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-phone" viewBox="0 0 48 48">
+      <g stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="12" y="3" width="24" height="42" rx="6" fill="#fff"/>
+        <rect x="16" y="9" width="16" height="26" rx="2" fill="#ffd23f" stroke-width="3"/>
+        <path d="M21 40 L27 40" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="ic-clock" viewBox="0 0 48 48">
+      <g stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M18 4 L30 4 M24 4 L24 9" fill="none"/>
+        <circle cx="24" cy="27" r="17" fill="#fff"/>
+        <path d="M24 27 L24 18 M24 27 L31 31" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="ic-sprout" viewBox="0 0 48 48">
+      <g stroke="#2a211c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M24 42 L24 22" fill="none"/>
+        <path d="M24 26 C24 14 14 8 5 10 C5 20 12 27 24 26Z" fill="#fff"/>
+        <path d="M24 22 C24 12 32 6 42 7 C42 16 36 22 24 22Z" fill="#ffd23f"/>
+        <path d="M12 42 L36 42" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 4 L20 12 L7 20Z" fill="#2a211c" stroke="#2a211c" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-open" viewBox="0 0 24 24"><path d="M8 16 L17 7 M10 6 L18 6 L18 14" fill="none" stroke="#2a211c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-code" viewBox="0 0 24 24"><path d="M8 7 L3 12 L8 17 M16 7 L21 12 L16 17" fill="none" stroke="#2a211c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-down" viewBox="0 0 24 24"><path d="M12 4 L12 19 M6 13 L12 19 L18 13" fill="none" stroke="#2a211c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
 
 <header>
-  <svg class="d hero-daisy a spin" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>
-  <svg class="d hero-daisy b spin rev" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>
-  <svg class="d hero-daisy c wobble" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>
+  <svg class="i deco a" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>
+  <svg class="i deco b" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>
+  <svg class="i deco c" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>
+  <svg class="i cloud" viewBox="0 0 150 80" aria-hidden="true"><use href="#cloud"/></svg>
   <div class="wrap">
-    <div class="tag">PORTFOLIO ✿ 2026</div>
-    <h1>打開瀏覽器，<br><span class="mark">馬上</span><em>就能用。</em></h1>
-    <p class="lead">這裡收錄我做的網頁遊戲和實用小工具。全部免安裝，手機也能用，點進去就開始。
-      <span class="sign">— PayLonSon</span></p>
+    <div class="tag"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>PayLonSon 作品集</div>
+    <h1>打開瀏覽器，<br><span class="pop">馬上</span>就能用！</h1>
+    <div class="bubble">嗨！這裡是我做的<b>網頁遊戲</b>和<b>小工具</b>。全部免安裝，手機也能用，點進去就開始～</div>
     <div class="cta">
-      <a class="btn primary" href="#works">看看作品 ↓</a>
-      <a class="btn" href="https://github.com/PayLonSon" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary" href="#works">看看作品<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-down"/></svg></a>
+      <a class="btn" href="https://github.com/PayLonSon" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-open"/></svg></a>
     </div>
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
+<div class="ribbon" aria-hidden="true"><div class="track" id="ribbon"></div></div>
 
 <section id="works">
   <div class="wrap">
-    <div class="h2"><h2>作品 <em>Works</em></h2>
-      <svg class="d wobble" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg></div>
+    <div class="h2"><svg class="i" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg><h2>作品</h2></div>
     <p class="sub">已上線的可以直接點進去用，開發中的歡迎先追蹤。</p>
     <div class="tabs" id="tabs"></div>
     <div id="workList"></div>
@@ -201,21 +307,20 @@
 
 <section id="about" style="padding-top:0">
   <div class="wrap">
-    <div class="h2"><h2>製作原則 <em>Rules</em></h2></div>
+    <div class="h2"><svg class="i" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg><h2>製作原則</h2></div>
     <p class="sub">每個作品都照這幾個原則做。</p>
     <div class="about">
-      <div><b>⚡ 免安裝</b><p>全部跑在瀏覽器裡，點連結就能用，不用下載 App。</p></div>
-      <div><b>📱 手機優先</b><p>介面與操作都先為手機設計，電腦也能順暢遊玩。</p></div>
-      <div><b>⏱ 輕量快速</b><p>遊戲一局幾分鐘，工具打開就能用，不用註冊。</p></div>
-      <div><b>🔄 持續更新</b><p>新故事、新內容會陸續加入，每次回來都有新東西。</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-bolt"/></svg><b>免安裝</b><p>全部跑在瀏覽器裡，點連結就能用，不用下載 App。</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-phone"/></svg><b>手機優先</b><p>介面與操作都先為手機設計，電腦也能順暢遊玩。</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-clock"/></svg><b>輕量快速</b><p>遊戲一局幾分鐘，工具打開就能用，不用註冊。</p></div>
+      <div><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-sprout"/></svg><b>持續更新</b><p>新故事、新內容會陸續加入，每次回來都有新東西。</p></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <svg class="d fd spin" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>
   <div class="wrap">
-    <span class="big">made with ✿ by PayLonSon</span>
+    <span class="big"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>made by PayLonSon</span>
     <span>© <span id="yr"></span> PayLonSon ・ 有建議或發現 bug？歡迎到 GitHub 開 Issue。</span>
   </div>
 </footer>
@@ -223,14 +328,15 @@
 <script>
 /* ===== 分類設定：要加新分類就在這裡加一筆 ===== */
 const categories = [
-  { id: "game", name: "遊戲",   icon: "🎮", sub: "一局幾分鐘的網頁遊戲，手機就能玩。" },
-  { id: "tool", name: "小工具", icon: "🛠", sub: "解決日常小麻煩的實用工具。" }
+  { id: "game", name: "遊戲",   icon: "ic-game", sub: "一局幾分鐘的網頁遊戲，手機就能玩。" },
+  { id: "tool", name: "小工具", icon: "ic-tool", sub: "解決日常小麻煩的實用工具。" }
 ];
 
 /* ===== 作品清單：新增作品只要在這裡加一筆 =====
    category: 對應上面分類的 id
    status:   live = 已上線, dev = 開發中
-   cover:    截圖路徑（例如 "images/doorvault.png"），留空就顯示色塊加 coverText
+   icon:     封面圖示 id（頁面上方 <symbol> 定義）
+   color:    封面底色
 */
 const works = [
   {
@@ -238,9 +344,8 @@ const works = [
     title: "三扇門｜惡夢",
     tagline: "DoorVault・連過三扇門，才能真正醒來",
     status: "live",
-    cover: "images/doorvault.png",
-    coverText: "門",
-    coverColor: "linear-gradient(135deg,#3a0d12,#120607)",
+    icon: "ic-door",
+    color: "#b9a3ff",
     desc: "一款 5 到 10 分鐘玩完的網頁恐怖遊戲。入睡後從床邊三樣道具挑一樣，接著連闖三扇以四字成語命名的門，每扇門都有自己的怪物規則與地圖，像「杯弓蛇影」裡你停下牠才靠近、「守口如瓶」只能靠聲音判斷。三扇門共用五分鐘，天亮前沒走完就失敗；每過一扇門可以三選一成長。每一晚都是新的一局，不存檔。",
     features: ["恐怖", "5–10 分鐘", "10 個成語故事", "6 種道具", "7 種成長", "手機／電腦"],
     link: "https://paylonson.github.io/DoorVault/",
@@ -251,9 +356,8 @@ const works = [
     title: "大富翁",
     tagline: "面對面用手機連線的台灣版大富翁",
     status: "live",
-    cover: "",
-    coverText: "🎲",
-    coverColor: "linear-gradient(135deg,#1d2b4a,#0b1020)",
+    icon: "ic-house",
+    color: "#7fdbb6",
     desc: "房主建立房間拿到 4 位數房號，朋友輸入房號就能加入，支援 2–6 人。房主的手機就是遊戲主機，負責所有規則判定，連上後資料在手機之間直接傳送。斷線的玩家重新打開網頁、輸入同一個房號就能回到遊戲。沒有多支手機也能用單機模式輪流傳著玩，會自動存檔。",
     features: ["多人 2–6 人", "房號連線", "單機輪流玩", "自動存檔", "聚會"],
     link: "https://paylonson.github.io/Monopoly/",
@@ -264,9 +368,8 @@ const works = [
     title: "火柴人地城",
     tagline: "StickDungeon・擲骰決定命運的火柴人合作冒險",
     status: "dev",
-    cover: "",
-    coverText: "⚔️",
-    coverColor: "linear-gradient(135deg,#2e1d4a,#0f0a1a)",
+    icon: "ic-hero",
+    color: "#ffb38a",
     desc: "火柴人風格的回合制「龍與地下城」式網頁遊戲，2–4 位朋友用手機輸入房號一起冒險。戰士、遊俠、法師、牧師四種職業各有專長，所有關鍵動作都擲 d20，全員同步看到結果。探索三層隨機地城、在營火選擇強化，最後挑戰火柴巨龍，一局約 20–30 分鐘。",
     features: ["合作 1–4 人", "回合制", "擲骰", "4 種職業", "房號連線"],
     link: "",
@@ -277,9 +380,8 @@ const works = [
     title: "分帳房 SplitRoom",
     tagline: "出去玩、聚餐的分帳，算清楚誰該給誰多少",
     status: "live",
-    cover: "",
-    coverText: "💰",
-    coverColor: "linear-gradient(135deg,#123a2a,#07140f)",
+    icon: "ic-split",
+    color: "#8fc8ff",
     desc: "每筆記下金額、誰先付、分給哪些人，自動算出每個人的差額，以及用最少轉帳筆數完成的「誰要給誰多少錢」。用 6 碼房號或邀請連結開房間，大家的手機可以同步記帳；房主離線會自動換人，離線時記的帳連上後也會自動合併。資料只存在你的瀏覽器，可匯出備份。",
     features: ["多人同步", "最少轉帳結算", "離線可用", "資料存在本機", "匯出／匯入"],
     link: "https://paylonson.github.io/SplitRoom/",
@@ -291,9 +393,8 @@ const works = [
     title: "作品名稱",
     tagline: "一句話說明",
     status: "live",              // live = 已上線, dev = 開發中
-    cover: "",                   // 截圖路徑，例如 "images/xxx.png"
-    coverText: "工",
-    coverColor: "linear-gradient(135deg,#3a2f12,#141007)",
+    icon: "ic-split",            // 圖示 id（見頁面上方 <symbol>）
+    color: "#ffd23f",            // 封面底色
     desc: "這個作品能做什麼。",
     features: ["標籤1", "標籤2"],
     link: "https://paylonson.github.io/你的repo/",
@@ -302,36 +403,42 @@ const works = [
   */
 ];
 
-const statusText = { live: "● 已上線", dev: "◐ 開發中" };
-const actionText = { game: "▶ 立即遊玩", tool: "↗ 開啟工具" };
+const statusText = { live: "已上線", dev: "開發中" };
+const action = { game: ["ic-play", "立即遊玩"], tool: ["ic-open", "開啟工具"] };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ico = (id, vb) => `<svg viewBox="${vb}" aria-hidden="true"><use href="#${esc(id)}"/></svg>`;
+const DAISY = ico("daisy", "0 0 100 100");
+const safeColor = c => /^#[0-9a-fA-F]{3,8}$/.test(c || "") ? c : "#ffd23f";
 
-const card = w => `
+const card = w => {
+  const [aIco, aText] = action[w.category] || ["ic-open", "開啟"];
+  return `
   <article class="card ${w.category === "tool" ? "small" : ""}">
-    <svg class="d sticker ${w.status === "live" ? "wobble" : ""}" viewBox="-50 -50 100 100" aria-hidden="true"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>
-    <div class="cover" style="background:${w.coverColor}">
-      ${w.cover ? `<img class="${w.coverFit==='cover'?'':'icon'}" src="${esc(w.cover)}" alt="${esc(w.title)} 截圖" loading="lazy">` : esc(w.coverText)}
-      <span class="status ${w.status}">${statusText[w.status]}</span>
+    <svg class="sticker" viewBox="0 0 100 100" aria-hidden="true"><use href="#daisy"/></svg>
+    <div class="cover" style="background:${safeColor(w.color)}">
+      <svg class="art" viewBox="0 0 120 120" role="img" aria-label="${esc(w.title)} 圖示"><use href="#${esc(w.icon)}"/></svg>
+      <span class="status ${w.status}"><i></i>${statusText[w.status]}</span>
     </div>
     <div class="body">
       <h3>${esc(w.title)}</h3>
-      <div class="tagline"><span>${esc(w.tagline)}</span></div>
+      <div class="tagline">${esc(w.tagline)}</div>
       <p>${esc(w.desc)}</p>
       <ul class="feats">${w.features.map(f => `<li>${esc(f)}</li>`).join("")}</ul>
       <div class="cta">
         ${w.link
-          ? `<a class="btn primary" href="${esc(w.link)}" target="_blank" rel="noopener">${actionText[w.category] || "↗ 開啟"}</a>`
+          ? `<a class="btn primary" href="${esc(w.link)}" target="_blank" rel="noopener">${ico(aIco, "0 0 24 24")}${aText}</a>`
           : `<span class="btn disabled">即將推出</span>`}
-        ${w.repo ? `<a class="btn" href="${esc(w.repo)}" target="_blank" rel="noopener">原始碼</a>` : ""}
+        ${w.repo ? `<a class="btn" href="${esc(w.repo)}" target="_blank" rel="noopener">${ico("ic-code", "0 0 24 24")}原始碼</a>` : ""}
       </div>
     </div>
   </article>`;
+};
 
 function render(active) {
-  const tabs = [{ id: "all", name: "全部", icon: "✿" }, ...categories];
+  const tabs = [{ id: "all", name: "全部", icon: "daisy", vb: "0 0 100 100" }, ...categories];
   document.getElementById("tabs").innerHTML = tabs.map(t => {
     const n = t.id === "all" ? works.length : works.filter(w => w.category === t.id).length;
-    return `<button class="tab ${t.id === active ? "on" : ""}" data-id="${t.id}">${t.icon} ${t.name}<span class="n">${n}</span></button>`;
+    return `<button class="tab ${t.id === active ? "on" : ""}" data-id="${t.id}">${ico(t.icon, t.vb || "0 0 48 48")}${esc(t.name)}<span class="n">${n}</span></button>`;
   }).join("");
 
   const shown = active === "all" ? categories : categories.filter(c => c.id === active);
@@ -339,8 +446,8 @@ function render(active) {
     const list = works.filter(w => w.category === c.id)
       .sort((a, b) => (a.status === "live" ? 0 : 1) - (b.status === "live" ? 0 : 1)); // 已上線排前面
     return `<div class="cat">
-      <h3 class="cat-title">${c.icon} ${c.name}</h3>
-      <p class="cat-sub">${c.sub}</p>
+      <h3 class="cat-title">${ico(c.icon, "0 0 48 48")}${esc(c.name)}</h3>
+      <p class="cat-sub">${esc(c.sub)}</p>
       <div class="games">${list.length ? list.map(card).join("") : `<div class="empty">還沒有作品，敬請期待。</div>`}</div>
     </div>`;
   }).join("");
@@ -352,14 +459,12 @@ document.getElementById("tabs").addEventListener("click", e => {
   const b = e.target.closest(".tab"); if (b) render(b.dataset.id);
 });
 
-// 支援用網址直接打開某分類，例如 .../#tool
 const fromHash = location.hash.slice(1);
 render(categories.some(c => c.id === fromHash) ? fromHash : "all");
 
-// 跑馬燈：作品名稱自動串起來（重複兩次做無縫捲動）
-const daisySvg = `<svg viewBox="-50 -50 100 100"><use href="#daisy" x="-50" y="-50" width="100" height="100"/></svg>`;
-const mq = works.map(w => `${esc(w.title)}${daisySvg}`).join("");
-document.getElementById("marquee").innerHTML = `<span>${mq}${mq}</span><span>${mq}${mq}</span>`;
+// 作品名稱彩帶（靜態，不捲動）
+const names = works.map(w => `<span>${esc(w.title)}${DAISY}</span>`).join("");
+document.getElementById("ribbon").innerHTML = names + names;
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>

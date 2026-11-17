@@ -15,4 +15,4 @@
 - [SPEC.md](SPEC.md)：規格書
 
 ## 新增作品
-編輯 `index.html` 裡的 `works` 清單加一筆即可；截圖放在 `images/`。
+編輯 `index.html` 裡的 `works` 清單加一筆即可；圖示在檔案上方 `<symbol>` 定義。
