@@ -3,7 +3,7 @@
 | 項目 | 內容 |
 |---|---|
 | 產品名稱 | PayLonSon 作品集（ProjectHomePage） |
-| 文件版本 | v1.3 |
+| 文件版本 | v1.4 |
 | 對應程式版本 | `main` 分支 `index.html` |
 | 部署位置 | GitHub Pages（`https://paylonson.github.io/ProjectHomePage/`） |
 | 原始碼 | `https://github.com/PayLonSon/ProjectHomePage` |
@@ -57,13 +57,13 @@
 | 分類頁籤（Tab） | 頁面上切換顯示分類的按鈕：全部／遊戲／小工具 |
 | 作品卡片（Card） | 顯示單一作品的區塊：封面、標題、說明、標籤、按鈕 |
 
-### 1.5 收錄作品（v1.1）
+### 1.5 收錄作品（v1.4）
 
 | 分類 | 作品 | Repo | 狀態 |
 |---|---|---|---|
 | 遊戲 | 三扇門｜惡夢（DoorVault） | `PayLonSon/DoorVault` | 已上線 |
 | 遊戲 | 大富翁 | `PayLonSon/Monopoly` | 已上線 |
-| 遊戲 | 火柴人地城（StickDungeon） | 尚未建立（建議 `PayLonSon/StickDungeon`） | 開發中 |
+| 遊戲 | 火柴人地城（StickDungeon） | `PayLonSon/stickdungeon` | 開發中 |
 | 小工具 | 分帳房 SplitRoom | `PayLonSon/SplitRoom` | 已上線 |
 
 ---
@@ -375,7 +375,7 @@
 | 優先 | 項目 |
 |---|---|
 | 中 | 作品詳細頁加入實際截圖 |
-| 高 | 火柴人地城上線後改為 `live` 並填入 `link`、`repo` |
+| 高 | 火柴人地城上線後改為 `live` 並填入 `link` |
 | 中 | 作品詳細頁（更多截圖、更新紀錄） |
 | 中 | 搜尋或標籤篩選 |
 | 低 | 英文版 |
@@ -389,6 +389,7 @@
 | v1.1 | 2026-11-17 | 新增開發中作品「火柴人地城」 |
 | v1.2 | 2026-11-17 | 視覺改版：街頭潮流風格＋原創雛菊主視覺、作品跑馬燈 |
 | v1.3 | 2026-11-17 | 改為卡通風、移除所有動畫、為每個作品與介面設計原創圖示、加入 favicon |
+| v1.4 | 2026-11-17 | 更新作品內容：DoorVault 玩法介紹、大富翁政策卡與歷史事件、分帳房新手導覽、火柴人地城 repo |
 
 ---
 
@@ -401,7 +402,7 @@
 | 三扇門｜惡夢 | https://paylonson.github.io/DoorVault/ | https://github.com/PayLonSon/DoorVault |
 | 大富翁 | https://paylonson.github.io/Monopoly/ | https://github.com/PayLonSon/Monopoly |
 | 分帳房 SplitRoom | https://paylonson.github.io/SplitRoom/ | https://github.com/PayLonSon/SplitRoom |
-| 火柴人地城（開發中） | 尚未發布 | 尚未建立 |
+| 火柴人地城（開發中） | 尚未發布 | https://github.com/PayLonSon/stickdungeon |
 
 ### 9.2 技術文件
 
