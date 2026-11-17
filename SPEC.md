@@ -3,7 +3,7 @@
 | 項目 | 內容 |
 |---|---|
 | 產品名稱 | PayLonSon 作品集（ProjectHomePage） |
-| 文件版本 | v1.0 |
+| 文件版本 | v1.1 |
 | 對應程式版本 | `main` 分支 `index.html` |
 | 部署位置 | GitHub Pages（`https://paylonson.github.io/ProjectHomePage/`） |
 | 原始碼 | `https://github.com/PayLonSon/ProjectHomePage` |
@@ -57,12 +57,13 @@
 | 分類頁籤（Tab） | 頁面上切換顯示分類的按鈕：全部／遊戲／小工具 |
 | 作品卡片（Card） | 顯示單一作品的區塊：封面、標題、說明、標籤、按鈕 |
 
-### 1.5 收錄作品（v1.0）
+### 1.5 收錄作品（v1.1）
 
 | 分類 | 作品 | Repo | 狀態 |
 |---|---|---|---|
 | 遊戲 | 三扇門｜惡夢（DoorVault） | `PayLonSon/DoorVault` | 已上線 |
 | 遊戲 | 大富翁 | `PayLonSon/Monopoly` | 已上線 |
+| 遊戲 | 火柴人地城（StickDungeon） | 尚未建立（建議 `PayLonSon/StickDungeon`） | 開發中 |
 | 小工具 | 分帳房 SplitRoom | `PayLonSon/SplitRoom` | 已上線 |
 
 ---
@@ -81,7 +82,7 @@
 
 **驗收條件**
 
-- 以手機與桌機瀏覽器開啟線上網址，可看到 §1.5 全部作品。
+- 以手機與桌機瀏覽器開啟線上網址，可看到 §1.5 全部作品；開發中作品顯示「即將推出」且無原始碼按鈕。
 - 點擊分類頁籤只顯示該分類作品；「全部」顯示所有分類。
 - 每個「已上線」作品的遊玩／開啟按鈕與原始碼按鈕都能開啟正確網址。
 - 在 `works` 清單新增一筆後重新整理，新作品出現在對應分類，計數同步更新。
@@ -347,14 +348,14 @@
 - 作品清單需手動維護，不會自動同步 GitHub repo。
 - 作品網址失效時不會自動偵測或隱藏。
 - 只有繁體中文。
-- 大富翁、分帳房尚無截圖，以色塊加 emoji 作為封面。
+- 大富翁、火柴人地城、分帳房尚無截圖，以色塊加 emoji 作為封面。
 
 ### 8.5 後續擴充方向
 
 | 優先 | 項目 |
 |---|---|
 | 高 | 為每個作品補上截圖或示範 GIF |
-| 高 | 新作品上線後加入列表（如規劃中的「火柴人地城 StickDungeon」） |
+| 高 | 火柴人地城上線後改為 `live` 並填入 `link`、`repo` |
 | 中 | 作品詳細頁（更多截圖、更新紀錄） |
 | 中 | 搜尋或標籤篩選 |
 | 低 | 英文版 |
@@ -365,6 +366,7 @@
 | 版本 | 日期 | 內容 |
 |---|---|---|
 | v1.0 | 2026-11-17 | 初版：分類頁籤、作品卡片、網址分類；收錄 DoorVault、大富翁、分帳房 |
+| v1.1 | 2026-11-17 | 新增開發中作品「火柴人地城」 |
 
 ---
 
@@ -377,6 +379,7 @@
 | 三扇門｜惡夢 | https://paylonson.github.io/DoorVault/ | https://github.com/PayLonSon/DoorVault |
 | 大富翁 | https://paylonson.github.io/Monopoly/ | https://github.com/PayLonSon/Monopoly |
 | 分帳房 SplitRoom | https://paylonson.github.io/SplitRoom/ | https://github.com/PayLonSon/SplitRoom |
+| 火柴人地城（開發中） | 尚未發布 | 尚未建立 |
 
 ### 9.2 技術文件
 
